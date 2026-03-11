@@ -4,7 +4,7 @@
             
             <div class="flex-shrink-0 flex items-center">
                 <a href="/" class="text-xl font-bold text-indigo-600 tracking-tight hover:text-indigo-700 transition">
-                    Examen App
+                    Iron Pulse Gym
                 </a>
             </div>
 
@@ -23,10 +23,17 @@
                         <a href="/beheerder/dashboard" class="{{ request()->is('beheerder/dashboard*') ? 'text-indigo-600 bg-indigo-50' : 'text-slate-600 hover:text-indigo-600' }} px-3 py-2 rounded-md text-sm font-medium transition-colors">
                             Beheerder Dashboard
                         </a>
-                        
-                    @elseif (Auth::user()->role === 'Gebruiker')
-                        <a href="/gebruiker/dashboard" class="{{ request()->is('gebruiker/dashboard*') ? 'text-indigo-600 bg-indigo-50' : 'text-slate-600 hover:text-indigo-600' }} px-3 py-2 rounded-md text-sm font-medium transition-colors">
-                            Mijn Dashboard
+                    @elseif (Auth::user()->role === 'Lid')
+                        <a href="/lid/dashboard" class="{{ request()->is('lid/dashboard*') ? 'text-indigo-600 bg-indigo-50' : 'text-slate-600 hover:text-indigo-600' }} px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                            Lid Dashboard
+                        </a>
+                    @elseif (Auth::user()->role === 'Balie')
+                        <a href="/balie/dashboard" class="{{ request()->is('balie/dashboard*') ? 'text-indigo-600 bg-indigo-50' : 'text-slate-600 hover:text-indigo-600' }} px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                            Balie Dashboard
+                        </a>
+                    @elseif (Auth::user()->role === 'Trainer')
+                        <a href="/trainer/dashboard" class="{{ request()->is('trainer/dashboard*') ? 'text-indigo-600 bg-indigo-50' : 'text-slate-600 hover:text-indigo-600' }} px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                            Trainer Dashboard
                         </a>
                     @endif
                 @endauth

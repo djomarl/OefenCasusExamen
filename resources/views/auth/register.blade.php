@@ -26,7 +26,9 @@
 
             <x-form-group label="Rol" for="role">
                 <select name="role" id="role" class="block w-full rounded-md border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm text-slate-900 placeholder:text-slate-400 bg-white px-3 py-2 border transition-colors ease-in-out duration-200">
-                    <option value="Gebruiker">Gebruiker</option>
+                    <option value="Lid">Lid</option>
+                    <option value="Balie">Balie</option>
+                    <option value="Trainer">Trainer</option>
                     <option value="Beheerder">Beheerder</option>
                 </select>
             </x-form-group>

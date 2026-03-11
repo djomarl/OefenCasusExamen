@@ -28,12 +28,17 @@ class LoginSessionController extends Controller
         session()->regenerate();
 
         // Redirect op basis van de rol van de gebruiker
-        if (Auth::user()->role === 'Beheerder') {
-            return redirect('/beheerder/dashboard');
-        }
-
-        if (Auth::user()->role === 'Gebruiker') {
-            return redirect('/gebruiker/dashboard');
+        switch (Auth::user()->role) {
+            case 'Beheerder':
+                return redirect('/beheerder/dashboard');
+            case 'Lid':
+                return redirect('/lid/dashboard');
+            case 'Balie':
+                return redirect('/balie/dashboard');
+            case 'Trainer':
+                return redirect('/trainer/dashboard');
+            default:
+                return redirect('/');
         }
     }
 

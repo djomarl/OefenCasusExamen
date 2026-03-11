@@ -25,9 +25,23 @@ Route::middleware(['auth', 'role:Beheerder'])->prefix('beheerder')->group(functi
     });
 });
 
-// Gebruiker sectie 
-Route::middleware(['auth', 'role:Gebruiker'])->prefix('gebruiker')->group(function () {
+// Lid sectie
+Route::middleware(['auth', 'role:Lid'])->prefix('lid')->group(function () {
     Route::get('/dashboard', function () { 
-        return view('gebruiker.dashboard'); 
+        return view('lid.dashboard'); 
+    });
+});
+
+// Balie sectie
+Route::middleware(['auth', 'role:Balie'])->prefix('balie')->group(function () {
+    Route::get('/dashboard', function () { 
+        return view('balie.dashboard'); 
+    });
+});
+
+// Trainer sectie
+Route::middleware(['auth', 'role:Trainer'])->prefix('trainer')->group(function () {
+    Route::get('/dashboard', function () { 
+        return view('trainer.dashboard'); 
     });
 });
