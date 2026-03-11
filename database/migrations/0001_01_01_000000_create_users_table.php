@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('role')->default('Lid');
             $table->string('username')->unique();
             $table->string('password');
+            $table->integer('points')->default(0);
+            
             $table->rememberToken();
             $table->timestamps();
         });

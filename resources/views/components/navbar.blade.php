@@ -24,6 +24,9 @@
                             Beheerder Dashboard
                         </a>
                     @elseif (Auth::user()->role === 'Lid')
+                        <a href="/lid/mijngegevens" class="{{ request()->is('lid/mijngegevens*') ? 'text-indigo-600 bg-indigo-50' : 'text-slate-600 hover:text-indigo-600' }} px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                            Mijn Gegegvens
+                        </a>
                         <a href="/lid/dashboard" class="{{ request()->is('lid/dashboard*') ? 'text-indigo-600 bg-indigo-50' : 'text-slate-600 hover:text-indigo-600' }} px-3 py-2 rounded-md text-sm font-medium transition-colors">
                             Lid Dashboard
                         </a>
@@ -32,7 +35,10 @@
                             Balie Dashboard
                         </a>
                     @elseif (Auth::user()->role === 'Trainer')
-                        <a href="/trainer/dashboard" class="{{ request()->is('trainer/dashboard*') ? 'text-indigo-600 bg-indigo-50' : 'text-slate-600 hover:text-indigo-600' }} px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                    <a href="/trainer/mijngegevens" class="{{ request()->is('trainer/mijngegevens*') ? 'text-indigo-600 bg-indigo-50' : 'text-slate-600 hover:text-indigo-600' }} px-3 py-2 rounded-md text-sm font-medium transition-colors">
+                            Mijn Gegegvens
+                        </a>    
+                    <a href="/trainer/dashboard" class="{{ request()->is('trainer/dashboard*') ? 'text-indigo-600 bg-indigo-50' : 'text-slate-600 hover:text-indigo-600' }} px-3 py-2 rounded-md text-sm font-medium transition-colors">
                             Trainer Dashboard
                         </a>
                     @endif

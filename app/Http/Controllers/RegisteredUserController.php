@@ -34,6 +34,17 @@ class RegisteredUserController extends Controller
         Auth::login($user);
 
         // Redirect to the intended page
-        return redirect('/');
+        switch (Auth::user()->role) {
+            case 'Beheerder':
+                return redirect('/beheerder/dashboard');
+            case 'Lid':
+                return redirect('/lid/dashboard');
+            case 'Balie':
+                return redirect('/balie/dashboard');
+            case 'Trainer':
+                return redirect('/trainer/dashboard');
+            default:
+                return redirect('/');
+        }
     }
 }
